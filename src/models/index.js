@@ -20,8 +20,8 @@ db.Course = CourseModel(sequelize, Sequelize);
 db.Teacher = TeacherModel(sequelize, Sequelize);
 
 // Associations
-db.Teacher.hasMany(db.Course);
-db.Course.belongsTo(db.Teacher);
+db.Teacher.hasMany(db.Course, { as: 'Courses', foreignKey: 'TeacherId' });
+db.Course.belongsTo(db.Teacher, { as: 'Teacher', foreignKey: 'TeacherId' });
 
 db.Course.belongsToMany(db.Student, { through: "CourseStudent" });
 db.Student.belongsToMany(db.Course, { through: "CourseStudent" });
