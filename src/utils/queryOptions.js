@@ -24,7 +24,7 @@ export const buildQueryOptions = (req, allowedIncludes = []) => {
       }
     });
 
-    if (includes.length > 0) options.include = includes;
+    if (includes.length > 0) options.include = includesco
   }
 
   return options;
